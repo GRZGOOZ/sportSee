@@ -1,0 +1,15 @@
+.bvn {
+  margin-bottom: 3rem;
+  &_title {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    &_username {
+      color: var(--primary);
+      margin-left: 5px;
+    }
+  }
+  &_msg {
+    font-weight: 400;
+  }
+}
