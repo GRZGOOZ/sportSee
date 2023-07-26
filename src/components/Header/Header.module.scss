@@ -1,0 +1,30 @@
+.header {
+  height: 80px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  &_title {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    &_img {
+      width: 64px;
+      height: 64px;
+    }
+    &_title {
+      color: var(--primary);
+      font-weight: normal;
+    }
+  }
+
+  & nav ul {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    & li {
+      color: white;
+      font-weight: bold;
+      margin-right: 7rem;
+    }
+  }
+}
