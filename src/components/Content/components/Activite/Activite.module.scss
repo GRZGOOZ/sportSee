@@ -1,0 +1,35 @@
+.activite {
+  &_title {
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &_barChart {
+    margin-left: -47px;
+    &_Xxday {
+    }
+
+    &_YxrightKg {
+      & line {
+        display: none;
+      }
+    }
+    &_YxLeftCal {
+      display: none;
+    }
+
+    &_legend {
+      &_kg,
+      &_cal {
+        color: rgba(116, 121, 140, 1);
+        font-size: 0.9rem;
+      }
+    }
+    &_cartesianGrid {
+    }
+    &_barLeft {
+    }
+    &_barRight {
+    }
+  }
+}

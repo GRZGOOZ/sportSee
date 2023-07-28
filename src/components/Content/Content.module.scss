@@ -3,4 +3,27 @@
   height: 700px;
   margin-left: 80px;
   padding: 40px 80px;
+  &_main {
+    display: flex;
+    &_graphs {
+      &_top {
+        &_activite {
+          background-color: var(--bg);
+          margin-right: 3rem;
+          padding-top: 1rem;
+          border-radius: 5px;
+        }
+      }
+      &_bottom {
+        &_averageSession {
+        }
+        &_performance {
+        }
+        &_score {
+        }
+      }
+    }
+    &_keydata {
+    }
+  }
 }
