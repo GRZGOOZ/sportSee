@@ -15,7 +15,7 @@ const Session = ({ sessions }) => {
       <h4 className={styles.session_title}>Durée moyenne des sessions</h4>
       <LineChart
         width={200}
-        height={150}
+        height={148}
         data={data}
         className={styles.session_lineChart}
         margin={{
