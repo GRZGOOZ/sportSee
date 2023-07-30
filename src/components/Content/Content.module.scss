@@ -10,7 +10,7 @@
       &_top {
         &_activite {
           background-color: var(--bg);
-          margin-right: 3rem;
+          margin-right: 1rem;
           padding-top: 1rem;
           border-radius: 5px;
         }
@@ -29,10 +29,13 @@
           border-radius: 5px;
         }
         &_score {
+          width: 200px;
+          height: 200px;
+          margin-left: 1rem;
+          border-radius: 5px;
+          background-color: var(--bg);
         }
       }
-    }
-    &_keydata {
     }
   }
 }

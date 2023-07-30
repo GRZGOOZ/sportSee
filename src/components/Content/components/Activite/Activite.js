@@ -44,7 +44,7 @@ const Activite = ({ sessions }) => {
     <div className={styles.activite}>
       <h4 className={styles.activite_title}>Activité quotidienne</h4>
       <BarChart
-        width={630}
+        width={679}
         height={200}
         data={data}
         className={styles.activite_barChart}
