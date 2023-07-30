@@ -16,11 +16,17 @@
         }
       }
       &_bottom {
+        display: flex;
+        padding-top: 1rem;
         &_averageSession {
           width: 200px;
-          padding-top: 1rem;
         }
         &_performance {
+          width: 200px;
+          height: 200px;
+          margin-left: 1rem;
+          background-color: rgba(40, 45, 48, 1);
+          border-radius: 5px;
         }
         &_score {
         }

@@ -97,7 +97,7 @@ const Activite = ({ sessions }) => {
           verticalAlign="top"
           align="right"
           className={styles.activite_barChart_legend}
-          iconType="circle" // Use circle as the legend icon
+          iconType="circle"
           formatter={(value, entry) => {
             if (entry && entry.dataKey === "kilograms") {
               return (
