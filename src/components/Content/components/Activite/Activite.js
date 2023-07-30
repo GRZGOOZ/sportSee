@@ -44,7 +44,7 @@ const Activite = ({ sessions }) => {
     <div className={styles.activite}>
       <h4 className={styles.activite_title}>Activité quotidienne</h4>
       <BarChart
-        width={600}
+        width={630}
         height={200}
         data={data}
         className={styles.activite_barChart}
@@ -88,7 +88,7 @@ const Activite = ({ sessions }) => {
         <Bar
           yAxisId="left"
           dataKey="caloriesBurned"
-          fill="red"
+          fill="#E60000"
           barSize={5}
           radius={[20, 20, 0, 0]}
           className={styles.activite_barChart_barLeft}

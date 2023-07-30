@@ -1,13 +1,12 @@
 .activite {
+  margin-bottom: 1rem;
   &_title {
-    margin-left: 1rem;
     margin-bottom: 2rem;
+    margin-left: 1rem;
   }
 
   &_barChart {
     margin-left: -47px;
-    &_Xxday {
-    }
 
     &_YxrightKg {
       & line {
@@ -24,12 +23,6 @@
         color: rgba(116, 121, 140, 1);
         font-size: 0.9rem;
       }
-    }
-    &_cartesianGrid {
-    }
-    &_barLeft {
-    }
-    &_barRight {
     }
   }
 }
