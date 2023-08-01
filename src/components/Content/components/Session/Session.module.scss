@@ -2,11 +2,12 @@
   color: white;
   background-color: var(--primary);
   border-radius: 5px;
-  padding-top: 1rem;
+  height: 200px;
   width: 200px;
   &_title {
     margin-left: 1rem;
     opacity: 0.8;
+    padding-top: 1rem;
   }
   &_lineChart {
     &_YxLeftTime {
