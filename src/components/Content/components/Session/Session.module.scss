@@ -5,9 +5,11 @@
   height: 200px;
   width: 200px;
   &_title {
-    margin-left: 1rem;
     opacity: 0.8;
-    padding-top: 1rem;
+    position: absolute;
+    bottom: 191px;
+    left: 127px;
+    width: 160px;
   }
   &_lineChart {
     &_YxLeftTime {
@@ -19,7 +21,6 @@
       }
     }
     &_XxDay {
-      transform: scaleX(100px);
       & line {
         display: none;
       }

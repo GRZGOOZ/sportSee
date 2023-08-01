@@ -1,6 +1,7 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
 import styles from "./Session.module.scss";
 import CustomTooltip from "./components/CustomTooltip/CustomTooltip";
+import CustomCursor from "./components/CustomCursor/CustomCursor";
 
 const Session = ({ sessions }) => {
   const data = sessions.map((session) => ({
@@ -15,11 +16,11 @@ const Session = ({ sessions }) => {
       <h4 className={styles.session_title}>Durée moyenne des sessions</h4>
       <LineChart
         width={200}
-        height={150}
+        height={200}
         data={data}
         className={styles.session_lineChart}
         margin={{
-          top: 10,
+          top: 40,
           right: 10,
           bottom: 10,
           left: -50,
@@ -35,13 +36,7 @@ const Session = ({ sessions }) => {
           className={styles.session_lineChart_YxLeftTime}
           domain={[-5, "dataMax + 10"]}
         />
-        <Tooltip
-          content={<CustomTooltip />}
-          cursor={{
-            opacity: 0.8,
-            strokeWidth: 2,
-          }}
-        />
+        <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
         <Line
           type="natural"
           dataKey="sessionLength"
