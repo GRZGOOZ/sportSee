@@ -1,8 +1,13 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import styles from "./Score.module.scss";
 
-const Score = ({ todayScore }) => {
-  const percentage = todayScore * 100;
+const Score = ({ userData }) => {
+  let percentage;
+  if (userData.todayScore === undefined) {
+    percentage = userData.score * 100;
+  } else {
+    percentage = userData.todayScore * 100;
+  }
   const data = [
     { name: "Percentage", value: percentage },
     { name: "Remaining", value: 100 - percentage },
