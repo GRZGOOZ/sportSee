@@ -38,7 +38,7 @@ const Content = () => {
                     />
                   </div>
                   <div className={styles.content_main_graphs_bottom_score}>
-                    <Score todayScore={userData.todayScore} />
+                    <Score userData={userData} />
                   </div>
                 </div>
               </div>
