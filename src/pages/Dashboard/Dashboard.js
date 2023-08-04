@@ -1,16 +1,21 @@
-import styles from "./Content.module.scss";
+import styles from "./Dashboard.module.scss";
 import KeyDataUser from "./components/KeyDataUser/KeyDataUser";
 import Msgbvn from "./components/Msgbvn/Msgbvn";
 import Activite from "./components/Activite/Activite";
-import useUserData from "../../useUserData";
 import Session from "./components/Session/Session";
 import Performances from "./components/Performances/Performances";
 import Score from "./components/Score/Score";
+import { useParams } from "react-router-dom";
+import useHookUserData from "../../api/useHookUserData";
+//import useUserData from "../../api/useUserData";
 
-const Content = () => {
-  const userId = 12;
+
+const Dashboard = () => {
+  const { id } = useParams();
+  // const { userData, userActivity, userPerformance, userAverageSessions } =
+  // useUserData(Number(id));
   const { userData, userActivity, userPerformance, userAverageSessions } =
-    useUserData(userId);
+  useHookUserData(Number(id));
 
   return (
     <div className={styles.content}>
@@ -55,4 +60,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default Dashboard;

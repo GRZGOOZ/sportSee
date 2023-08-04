@@ -1,0 +1,53 @@
+.accordion {
+  &_button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 80px;
+    &_title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-right: 5rem;
+    }
+    & .arrow {
+      margin-right: 2rem;
+      width: 10px;
+      height: 10px;
+      border-top: 3px solid white;
+      border-right: 3px solid white;
+      transform: rotate(135deg);
+      transition: transform 0.2s ease-in-out;
+      &_up {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &_content {
+    background-color: black;
+    color: white;
+    height: 80px;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 250px;
+    border-bottom-left-radius: 5px;
+    &_links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 80px;
+      & li a {
+        color: white;
+        &:hover {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+}

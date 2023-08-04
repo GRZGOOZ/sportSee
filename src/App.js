@@ -1,15 +1,21 @@
 import styles from "./App.module.scss";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Content from "./components/Content/Content";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
-    <div className={styles.appContainer}>
-      <Header />
-      <Content />
-      <Footer />
-    </div>
+    <Router>
+      <div className={styles.appContainer}>
+        <Header />
+        <Routes>
+          <Route path="/SportSee" element={<Dashboard />} />
+          <Route path="/SportSee/:id" element={<Dashboard />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

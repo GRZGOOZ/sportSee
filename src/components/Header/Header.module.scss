@@ -17,11 +17,11 @@
     }
   }
 
-  & nav ul {
+  &_nav {
     height: 80px;
     display: flex;
     align-items: center;
-    & li {
+    &_n {
       color: white;
       font-weight: bold;
       margin-right: 7rem;

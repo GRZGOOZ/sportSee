@@ -5,7 +5,6 @@ import {
   getUserPerformance,
   getUserAverageSessions,
 } from "./apiService";
-
 const useUserData = (userId) => {
   const [userData, setUserData] = useState(null);
   const [userActivity, setUserActivity] = useState(null);
