@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SportSee/12/static/css/main.9b527445.css",
+    "main.js": "/SportSee/12/static/js/main.22560948.js",
+    "index.html": "/SportSee/12/index.html",
+    "main.9b527445.css.map": "/SportSee/12/static/css/main.9b527445.css.map",
+    "main.22560948.js.map": "/SportSee/12/static/js/main.22560948.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b527445.css",
+    "static/js/main.22560948.js"
+  ]
+}
