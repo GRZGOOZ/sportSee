@@ -5,12 +5,10 @@ import {
   USER_PERFORMANCE,
   USER_AVERAGE_SESSIONS,
 } from "./data";
+import UserDataModel from "./UserDataModel";
 
 const useHookUserData = (userId) => {
-  const [userData, setUserData] = useState(null);
-  const [userActivity, setUserActivity] = useState(null);
-  const [userPerformance, setUserPerformance] = useState(null);
-  const [userAverageSessions, setUserAverageSessions] = useState(null);
+  const [userDataModel, setUserDataModel] = useState(null);
 
   useEffect(() => {
     const userMainData = USER_MAIN_DATA.find((user) => user.id === userId);
@@ -20,17 +18,21 @@ const useHookUserData = (userId) => {
     const userPerformanceData = USER_PERFORMANCE.find(
       (performance) => performance.userId === userId
     );
-    const userAverageSessions = USER_AVERAGE_SESSIONS.find(
+    const userAverageSessionsData = USER_AVERAGE_SESSIONS.find(
       (averageSessionsData) => averageSessionsData.userId === userId
     );
 
-    setUserData(userMainData);
-    setUserActivity(userActivityData);
-    setUserPerformance(userPerformanceData);
-    setUserAverageSessions(userAverageSessions);
+    const formattedUserData = new UserDataModel(
+      userMainData,
+      userActivityData,
+      userPerformanceData,
+      userAverageSessionsData
+    );
+
+    setUserDataModel(formattedUserData);
   }, [userId]);
 
-  return { userData, userActivity, userPerformance, userAverageSessions };
+  return userDataModel;
 };
 
 export default useHookUserData;

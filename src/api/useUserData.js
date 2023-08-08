@@ -5,37 +5,33 @@ import {
   getUserPerformance,
   getUserAverageSessions,
 } from "./apiService";
+import UserDataModel from "./UserDataModel";
+
 const useUserData = (userId) => {
-  const [userData, setUserData] = useState(null);
-  const [userActivity, setUserActivity] = useState(null);
-  const [userPerformance, setUserPerformance] = useState(null);
-  const [userAverageSessions, setUserAverageSessions] = useState(null);
+  const [userDataModel, setUserDataModel] = useState(null);
 
   useEffect(() => {
-    getUserInformation(userId)
-      .then((data) => setUserData(data))
-      .catch((error) => console.error("Error fetching user data:", error));
-
-    getUserActivity(userId)
-      .then((activityData) => setUserActivity(activityData))
-      .catch((error) => console.error("Error fetching user activity:", error));
-
-    getUserPerformance(userId)
-      .then((performanceData) => setUserPerformance(performanceData))
-      .catch((error) =>
-        console.error("Error fetching user performance:", error)
-      );
-
-    getUserAverageSessions(userId)
-      .then((averageSessionsData) =>
-        setUserAverageSessions(averageSessionsData)
+    Promise.all([
+      getUserInformation(userId),
+      getUserActivity(userId),
+      getUserPerformance(userId),
+      getUserAverageSessions(userId),
+    ])
+      .then(
+        ([userData, userActivity, userPerformance, userAverageSessions]) => {
+          const formattedUserData = new UserDataModel(
+            userData,
+            userActivity,
+            userPerformance,
+            userAverageSessions
+          );
+          setUserDataModel(formattedUserData);
+        }
       )
-      .catch((error) =>
-        console.error("Error fetching user average sessions:", error)
-      );
+      .catch((error) => console.error("Error fetching user data:", error));
   }, [userId]);
 
-  return { userData, userActivity, userPerformance, userAverageSessions };
+  return userDataModel;
 };
 
 export default useUserData;

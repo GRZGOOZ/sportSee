@@ -10,8 +10,8 @@ function App() {
       <div className={styles.appContainer}>
         <Header />
         <Routes>
-          <Route path="/SportSee" element={<Dashboard />} />
-          <Route path="/SportSee/:id" element={<Dashboard />} />
+          <Route path="/sportSee" element={<Dashboard />} />
+          <Route path="/sportSee/:id" element={<Dashboard />} />
         </Routes>
         <Footer />
       </div>
