@@ -29,10 +29,10 @@ export default function Communaute() {
       >
         <ul className={styles.accordion_content_links}>
           <li>
-            <Link to="/SportSee/12">Karl</Link>
+            <Link to="/sportSee/12">Karl</Link>
           </li>
           <li>
-            <Link to="/SportSee/18">Cecilia</Link>
+            <Link to="/sportSee/18">Cecilia</Link>
           </li>
         </ul>
       </nav>

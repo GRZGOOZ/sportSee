@@ -14,8 +14,8 @@ const Dashboard = () => {
   const { id } = useParams();
   // const { userData, userActivity, userPerformance, userAverageSessions } =
   // useUserData(Number(id));
-  const { userData, userActivity, userPerformance, userAverageSessions } =
-  useHookUserData(Number(id));
+  const { userData, userActivity, userPerformance, userAverageSessions } = useHookUserData(Number(id) ? Number(id) : 12);
+
 
   return (
     <div className={styles.content}>
