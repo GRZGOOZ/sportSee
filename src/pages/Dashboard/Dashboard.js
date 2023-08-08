@@ -7,7 +7,7 @@ import Performances from "./components/Performances/Performances";
 import Score from "./components/Score/Score";
 import { useParams } from "react-router-dom";
 import useHookUserData from "../../api/useHookUserData";
-import useUserData from "../../api/useUserData";
+//import useUserData from "../../api/useUserData";
 
 const Dashboard = () => {
   const { id } = useParams();
