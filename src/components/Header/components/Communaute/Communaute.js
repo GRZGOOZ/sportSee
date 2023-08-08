@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./Communaute.module.scss";
-import { Link } from "react-router-dom";
+import UsersLink from "./components/UsersLink/UsersLink";
+import {USER_MAIN_DATA} from "../../../../api/data"
 
 export default function Communaute() {
   const [isExpanded, setExpanded] = useState(false);
@@ -8,7 +9,7 @@ export default function Communaute() {
   const toggleAccordion = () => {
     setExpanded(!isExpanded);
   };
-
+  const userData = USER_MAIN_DATA
   return (
     <div className={styles.accordion}>
       <button
@@ -27,14 +28,7 @@ export default function Communaute() {
         style={{ display: isExpanded ? "block" : "none" }}
         className={styles.accordion_content}
       >
-        <ul className={styles.accordion_content_links}>
-          <li>
-            <Link to="/sportSee/12">Karl</Link>
-          </li>
-          <li>
-            <Link to="/sportSee/18">Cecilia</Link>
-          </li>
-        </ul>
+    <UsersLink userData={userData}/>
       </nav>
     </div>
   );
