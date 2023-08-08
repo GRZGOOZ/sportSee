@@ -7,45 +7,49 @@ import Performances from "./components/Performances/Performances";
 import Score from "./components/Score/Score";
 import { useParams } from "react-router-dom";
 import useHookUserData from "../../api/useHookUserData";
-import useUserData from "../../api/useUserData";
+//import useUserData from "../../api/useUserData";
+
 
 const Dashboard = () => {
   const { id } = useParams();
-  const userDataModel = useHookUserData(Number(id) ? Number(id) : 12);
- // const userDataModel = useUserData(Number(id) ? Number(id) : 12);
+  // const { userData, userActivity, userPerformance, userAverageSessions } =
+  // useUserData(Number(id));
+  const { userData, userActivity, userPerformance, userAverageSessions } = useHookUserData(Number(id) ? Number(id) : 12);
+
+
   return (
     <div className={styles.content}>
-      {userDataModel ? (
+      {userData && userActivity && userPerformance && userAverageSessions ? (
         <>
-          <Msgbvn firstName={userDataModel.userData.firstName} />
+          <Msgbvn firstName={userData.userInfos.firstName} />
           <div className={styles.content_main}>
             <div className={styles.content_main_graphs}>
               <div className={styles.content_main_graphs_top}>
                 <div className={styles.content_main_graphs_top_activite}>
-                  <Activite sessions={userDataModel.userActivity.sessions} />
+                  <Activite sessions={userActivity.sessions} />
                 </div>
                 <div className={styles.content_main_graphs_bottom}>
                   <div
                     className={styles.content_main_graphs_bottom_averageSession}
                   >
-                    <Session sessions={userDataModel.userAverageSessions.sessions} />
+                    <Session sessions={userAverageSessions.sessions} />
                   </div>
                   <div
                     className={styles.content_main_graphs_bottom_performance}
                   >
                     <Performances
-                      kind={userDataModel.userPerformance.kind}
-                      data={userDataModel.userPerformance.data}
+                      kind={userPerformance.kind}
+                      data={userPerformance.data}
                     />
                   </div>
                   <div className={styles.content_main_graphs_bottom_score}>
-                    <Score userData={userDataModel.userData} />
+                    <Score userData={userData} />
                   </div>
                 </div>
               </div>
             </div>
             <div className={styles.content_main_keydata}>
-              <KeyDataUser keyData={userDataModel.userData.keyData} />
+              <KeyDataUser keyData={userData.keyData} />
             </div>
           </div>
         </>
