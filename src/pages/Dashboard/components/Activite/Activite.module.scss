@@ -6,16 +6,15 @@
   }
   &_hider {
     position: absolute;
-    top: 473px;
+    top: 475px;
     left: 679px;
     width: 31px;
-    height: 4px;
-    background-color: #FAFAFA;
+    height: 3px;
+    background-color: #fafafa;
     z-index: 1;
   }
 
   &_barChart {
-    
     &_legend {
       &_kg,
       &_cal {
