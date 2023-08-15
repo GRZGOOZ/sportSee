@@ -21,9 +21,7 @@ const Session = ({ sessions }) => {
         className={styles.session_lineChart}
         margin={{
           top: 40,
-          right: 10,
           bottom: 10,
-          left: -50,
         }}
       >
         <XAxis
@@ -31,10 +29,16 @@ const Session = ({ sessions }) => {
           stroke="#ccc"
           tickFormatter={(dayIndex) => dayLabels[dayIndex - 1]}
           className={styles.session_lineChart_XxDay}
-        />
+          interval={0}
+          tickLine={false}
+          axisLine={false}
+          padding={{left: 0, right: 0
+          }}
+          />
         <YAxis
           className={styles.session_lineChart_YxLeftTime}
           domain={[-5, "dataMax + 10"]}
+          hide
         />
         <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
         <Line
@@ -42,6 +46,13 @@ const Session = ({ sessions }) => {
           dataKey="sessionLength"
           stroke="white"
           className={styles.session_lineChart_line}
+          dot={false}
+          activeDot={{
+            fill: "white",
+            stroke: "rgba(255, 255, 255, 0.5)",
+            strokeWidth: 10,
+            r: 5,
+          }}
         />
       </LineChart>
     </div>

@@ -12,18 +12,11 @@
     width: 160px;
   }
   &_lineChart {
-    &_YxLeftTime {
-      display: none;
-    }
-    &_line {
-      & circle {
-        display: none;
-      }
-    }
+
+   
     &_XxDay {
-      & line {
-        display: none;
-      }
+      transform: scaleX(0.9); /* Adjust the scale factor as needed */
+      transform-origin: center bottom;
     }
   }
 }

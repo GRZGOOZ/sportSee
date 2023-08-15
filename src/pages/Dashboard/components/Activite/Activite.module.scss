@@ -4,19 +4,18 @@
     margin-bottom: 2rem;
     margin-left: 1rem;
   }
+  &_hider {
+    position: absolute;
+    top: 473px;
+    left: 679px;
+    width: 31px;
+    height: 4px;
+    background-color: #FAFAFA;
+    z-index: 1;
+  }
 
   &_barChart {
-    margin-left: -47px;
-
-    &_YxrightKg {
-      & line {
-        display: none;
-      }
-    }
-    &_YxLeftCal {
-      display: none;
-    }
-
+    
     &_legend {
       &_kg,
       &_cal {

@@ -9,6 +9,7 @@ import {
   CartesianGrid,
 } from "recharts";
 import CustomTooltip from "./components/CustomTooltip/CustomTooltip";
+import CustomCursor from "./components/CustomCursor/CustomCursor";
 
 const Activite = ({ sessions }) => {
   const data = sessions.map((session, index) => ({
@@ -30,29 +31,28 @@ const Activite = ({ sessions }) => {
     maxKilograms,
   ];
 
-  const customYAxisTickFormatter = (value) => {
-    if (typeof value === "number") {
-      if (Number.isInteger(value)) {
-        return value.toFixed(0);
-      }
-      return value.toFixed(1);
-    }
-    return value;
-  };
-
   return (
     <div className={styles.activite}>
       <h4 className={styles.activite_title}>Activité quotidienne</h4>
+      <div className={styles.activite_hider}></div> 
       <BarChart
-        width={679}
+        width={632}
         height={200}
         data={data}
         className={styles.activite_barChart}
+        margin={{
+          left: 30,
+          right: -10
+        }}
       >
         <XAxis
           dataKey="day"
           stroke="#ccc"
           className={styles.activite_barChart_Xxday}
+          scale={"point"}
+          padding={{ right: 30 }}
+          interval={0}
+          tickLine={false}
         />
         <YAxis
           yAxisId="right"
@@ -60,22 +60,19 @@ const Activite = ({ sessions }) => {
           stroke="#ccc"
           domain={[minKilograms, maxKilograms]}
           ticks={tickValues}
-          tickFormatter={customYAxisTickFormatter}
           className={styles.activite_barChart_YxrightKg}
+          axisLine={false}
+          tickLine={false}
         />
-        <YAxis
-          yAxisId="left"
-          domain={[minCalories, maxCalories]}
-          className={styles.activite_barChart_YxLeftCal}
-          tickMargin={50}
-        />
-        <Tooltip content={<CustomTooltip />} />
+        <YAxis yAxisId="left" domain={[minCalories, maxCalories]} hide />
+        <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
 
         <CartesianGrid
           stroke="#ccc"
           strokeDasharray="2 2"
           vertical={false}
           className={styles.activite_barChart_cartesianGrid}
+          width={528}
         />
 
         <Bar
