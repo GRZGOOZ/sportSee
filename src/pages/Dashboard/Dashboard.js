@@ -6,13 +6,13 @@ import Session from "./components/Session/Session";
 import Performances from "./components/Performances/Performances";
 import Score from "./components/Score/Score";
 import { useParams } from "react-router-dom";
-//import useHookUserData from "../../api/useHookUserData";
-import useUserData from "../../api/useUserData";
+import useHookUserData from "../../api/useHookUserData";
+//import useUserData from "../../api/useUserData";
 
 const Dashboard = () => {
   const { id } = useParams();
-  //const userDataModel = useHookUserData(Number(id) ? Number(id) : 12);
-  const userDataModel = useUserData(Number(id) ? Number(id) : 12);
+  const userDataModel = useHookUserData(Number(id) ? Number(id) : 12);
+  //const userDataModel = useUserData(Number(id) ? Number(id) : 12);
 
   return (
     <div className={styles.content}>
