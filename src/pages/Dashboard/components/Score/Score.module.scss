@@ -1,4 +1,6 @@
 .score {
+  width: 200px;
+  height: 200px;
   &_title {
     position: absolute;
     right: 416px;
@@ -10,13 +12,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 50%;
-    background-color: white;
     position: absolute;
-    bottom: 75px;
-    height: 130px;
-    width: 130px;
-    margin-left: 35px;
+    bottom: 60.5px;
+    height: 152px;
+    width: 152px;
+    right: 296px;
     &_res {
       font-size: 2em;
       font-weight: bold;

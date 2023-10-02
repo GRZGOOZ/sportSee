@@ -9,7 +9,6 @@ import {
   CartesianGrid,
 } from "recharts";
 import CustomTooltip from "./components/CustomTooltip/CustomTooltip";
-import CustomCursor from "./components/CustomCursor/CustomCursor";
 
 const Activite = ({ sessions }) => {
   const data = sessions.map((session, index) => ({
@@ -41,16 +40,14 @@ const Activite = ({ sessions }) => {
         data={data}
         className={styles.activite_barChart}
         margin={{
-          left: 30,
-          right: -10
+          left: 15,
+          
         }}
       >
         <XAxis
           dataKey="day"
           stroke="#ccc"
           className={styles.activite_barChart_Xxday}
-          scale={"point"}
-          padding={{ right: 30 }}
           interval={0}
           tickLine={false}
         />
@@ -65,14 +62,13 @@ const Activite = ({ sessions }) => {
           tickLine={false}
         />
         <YAxis yAxisId="left" domain={[minCalories, maxCalories]} hide />
-        <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
+        <Tooltip content={<CustomTooltip />}  />
 
         <CartesianGrid
           stroke="#ccc"
           strokeDasharray="2 2"
           vertical={false}
           className={styles.activite_barChart_cartesianGrid}
-          width={528}
         />
 
         <Bar

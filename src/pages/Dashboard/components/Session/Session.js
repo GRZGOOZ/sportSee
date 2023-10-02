@@ -22,6 +22,8 @@ const Session = ({ sessions }) => {
         margin={{
           top: 40,
           bottom: 10,
+          left: 10,
+          right: 10
         }}
       >
         <XAxis
@@ -40,7 +42,7 @@ const Session = ({ sessions }) => {
           domain={[-5, "dataMax + 10"]}
           hide
         />
-        <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
+        <Tooltip content={<CustomTooltip />}  cursor={<CustomCursor />}/>
         <Line
           type="natural"
           dataKey="sessionLength"

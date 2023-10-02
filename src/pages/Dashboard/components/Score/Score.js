@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell} from "recharts";
 import styles from "./Score.module.scss";
 
 const Score = ({ userData }) => {
@@ -18,10 +18,9 @@ const Score = ({ userData }) => {
   const startAngle = 180;
 
   return (
-    <>
+    <div className={styles.score}>
       <h4 className={styles.score_title}>Score</h4>
-      <ResponsiveContainer width="100%" height="100%">
-        <PieChart>
+        <PieChart width={200} height={200}>
           <Pie
             data={data}
             dataKey="value"
@@ -37,14 +36,13 @@ const Score = ({ userData }) => {
             ))}
           </Pie>
         </PieChart>
-      </ResponsiveContainer>
       <p className={styles.score_percentage}>
         <span className={styles.score_percentage_res}>
           {percentage.toFixed(0)}%
         </span>
         <span className={styles.score_percentage_txt}>de votre objectif</span>
       </p>
-    </>
+    </div>
   );
 };
 
