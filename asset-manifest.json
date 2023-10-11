@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/sportSee/static/css/main.3a10b306.css",
-    "main.js": "/sportSee/static/js/main.0d0f6d1b.js",
+    "main.css": "/sportSee/static/css/main.0ae16c3a.css",
+    "main.js": "/sportSee/static/js/main.a1f424d1.js",
     "index.html": "/sportSee/index.html",
-    "main.3a10b306.css.map": "/sportSee/static/css/main.3a10b306.css.map",
-    "main.0d0f6d1b.js.map": "/sportSee/static/js/main.0d0f6d1b.js.map"
+    "main.0ae16c3a.css.map": "/sportSee/static/css/main.0ae16c3a.css.map",
+    "main.a1f424d1.js.map": "/sportSee/static/js/main.a1f424d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a10b306.css",
-    "static/js/main.0d0f6d1b.js"
+    "static/css/main.0ae16c3a.css",
+    "static/js/main.a1f424d1.js"
   ]
 }
